@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom' //redirect between pages
+import { Link } from 'react-router-dom' //component to redirect between pages
 import { useSelector } from 'react-redux'
 
 export default function Header() {
     const { currentUser } = useSelector((state) => state.user);
   return (
     <div className='bg-slate-200'>
-        <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
+        <div className='flex justify-between items-center max-w-8xl mx-auto p-3'>
             <Link to='/'>
             <h1 className='font-bold'>RQRNG</h1>
             </Link>

@@ -10,7 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 export default function App() {
   return (
     <BrowserRouter>
-    {/* header */}
+    {/* header put outside the <Routes /> to have in all pages */}
     <Header/>
       <Routes>
           <Route path="/" element={<Home/>} />

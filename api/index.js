@@ -1,21 +1,22 @@
 import express from 'express';
 import mongoose from 'mongoose';
+// by defult we cannot use .env in backend, so we need dotenv package
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-dotenv.config();
+dotenv.config(); // initialize dotenv pkg
 
 mongoose.connect(process.env.MONGO).then(() => {
     console.log('Connected to MongoDB');
-
-}).catch((err) => { 
-    console.log(err);
+    }).catch((err) => { 
+        console.log(err);
 });
 
 const __dirname = path.resolve();
 
+// Create a new instance of an Express application
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
