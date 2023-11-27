@@ -45,7 +45,6 @@ export default function SignIn() {
 
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
 
-
           <input type='email'
             placeholder='Email'
             id='email' 
@@ -60,7 +59,9 @@ export default function SignIn() {
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
             {loading ? 'Loading...' : 'Sign In'}
         </button>
+
         <OAuth/>
+      
       </form>
       
       <div className='flex gap-2 mt-5'>
