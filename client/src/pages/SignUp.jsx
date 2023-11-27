@@ -3,11 +3,16 @@ import {Link, useNavigate} from 'react-router-dom';
 import OAuth from '../components/OAuth';
 
 export default function SignUp() {
+  //states
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // inputs has onChange event listener what triggers handleCHange function
   const handleChange = (e) => {
+    //we need to save event changes inside the state
+    // use the spread operator ... to keep the previous value of the form data and then add new one [e.target.id]
     setFormData({...formData, [e.target.id]: e.target.value });
   };
 
